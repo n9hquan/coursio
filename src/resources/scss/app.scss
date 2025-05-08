@@ -15,3 +15,38 @@
     width: 130px;
     margin: 0 16px;
 }
+
+.card-course-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-text {
+    flex-grow: 1;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.form-control, .form-select {
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-control:focus, .form-select:focus {
+    border-color: #4dabf7; /* Light blue */
+    box-shadow: 0 0 8px rgba(77, 171, 247, 0.3);
+  }
+  
+  button.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  

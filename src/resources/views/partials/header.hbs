@@ -1,6 +1,13 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container"> <!-- This creates the boxed layout -->
-    <a class="navbar-brand" href="/">Nodejs Blog</a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#3B82F6" class="bi bi-book" viewBox="0 0 16 16">
+        <path d="M1 2.828c.885-.37 2.154-.828 4-.828s3.115.458 4 .828V14c-.885-.37-2.154-.828-4-.828s-3.115.458-4 .828V2.828z"/>
+        <path d="M9 2.828c.885-.37 2.154-.828 4-.828s3.115.458 4 .828V14c-.885-.37-2.154-.828-4-.828s-3.115.458-4 .828V2.828z"/>
+      </svg>
+      <span class="ms-2 fw-bold text-primary">Coursio</span>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -8,18 +15,18 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://avatars.githubusercontent.com/u/113574511?v=4" alt="" class="user-avatar">
-            n9hquan
+            <img src="https://avatars.githubusercontent.com/u/113574511?v=4" alt="User Avatar" class="rounded-circle me-2" width="32" height="32">
+            <span class="fw-semibold">n9hquan</span>
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/courses/create">Đăng khóa học</a></li>
-            <li><a class="dropdown-item" href="/me/stored/courses">Khóa học của tôi</a></li>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/courses/create">Create a Course</a></li>
+            <li><a class="dropdown-item" href="/me/stored/courses">My Courses</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+            <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
           </ul>
         </li>
       </ul>

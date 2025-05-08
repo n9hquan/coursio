@@ -1,83 +1,100 @@
-<form name="container-form" class="mt-4" method="POST" action="/courses/handle-form-action">
-    <form>
-      <h3>Khóa học của tôi</h3>
-      <a href="/me/trash/courses">Thùng rác ({{deletedCount}})</a>
-      <div class="mt-4 d-flex align-items-center">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
-          <label class="form-check-label" for="checkbox-all">
-            Chọn tất cả
-          </label>
-        </div>
-        <select class="form-select form-select-sm checkbox-select-all-options" name="action" required>
-          <option value="">-- Lựa chọn --</option>
-          <option value="delete">Xóa</option>
-        </select>
-        <button class="btn btn-primary btn-sm check-all-submit-btn disabled">Thực hiện</button>
+<form name="container-form" class="mt-5" method="POST" action="/courses/handle-form-action">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>📚 My Courses</h3>
+    <a href="/me/trash/courses" class="btn btn-outline-secondary btn-sm">
+      🗑️ Trash ({{deletedCount}})
+    </a>
+  </div>
+
+  <div class="card p-3 shadow-sm rounded-4 mb-4">
+    <div class="d-flex flex-wrap gap-3 align-items-center">
+      <div class="form-check m-0">
+        <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
+        <label class="form-check-label" for="checkbox-all">
+          Select all
+        </label>
       </div>
 
+      <select class="form-select form-select-sm checkbox-select-all-options w-auto" name="action" required>
+        <option value="">-- Choose an action --</option>
+        <option value="delete">Delete</option>
+      </select>
 
-    <table class="table mt-4">
-        <thead>
-            <tr>
-                <th scope="col" colspan="2">#</th>
-                <th scope="col">
-                  Tên khóa học
-                  {{{sortable 'name' _sort}}}
-                </th>
-                <th scope="col">
-                  Trình độ
-                  {{{sortable 'level' _sort}}}
-                </th>
-                <th scope="col" colspan="2">
-                  Thời gian tạo
-                  {{{sortable 'createdAt' _sort}}}
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each courses}}
-            <tr>
-                <td>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="courseIds[]" value="{{this._id}}">
-                  </div>
-                </td>
-                <th scope="row">{{sum @index 1}}</th>
-                <td>{{this.name}}</td>
-                <td>{{this.level}}</td>
-                <td>{{this.createdAt}}</td>
-                <td>
-                    <a href="/courses/{{this._id}}/edit" class="btn btn-link">Sửa</a>
-                    <a href="" class="btn btn-link" data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#delete-course-modal">Xóa</a>
-                </td>
-            </tr>
-            {{else}}
-            <tr>
-              <td colspan="5" class="text-center">
-                Bạn chưa đăng khóa học nào.
-                <a href="/courses/create">Đăng khóa học</a>
-              </td>
-            </tr>
-            {{/each}}
-        </tbody>
+      <button class="btn btn-danger btn-sm check-all-submit-btn disabled">
+        <i class="bi bi-trash"></i> Apply
+      </button>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover align-middle rounded-4 overflow-hidden shadow-sm">
+      <thead class="table-light">
+        <tr>
+          <th style="width:40px;">
+          </th>
+          <th style="width:40px;">#</th>
+          <th>
+            Course Name
+            {{{sortable 'name' _sort}}}
+          </th>
+          <th>
+            Level
+            {{{sortable 'level' _sort}}}
+          </th>
+          <th>
+            Created At
+            {{{sortable 'createdAt' _sort}}}
+          </th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each courses}}
+        <tr>
+          <td>
+            <input class="form-check-input" type="checkbox" name="courseIds[]" value="{{this._id}}">
+          </td>
+          <th scope="row">{{sum @index 1}}</th>
+          <td>{{this.name}}</td>
+          <td>{{this.level}}</td>
+          <td>{{this.createdAt}}</td>
+          <td>
+            <a href="/courses/{{this._id}}/edit" class="btn btn-sm btn-outline-primary me-2">
+              ✏️ Edit
+            </a>
+            <a href="" class="btn btn-sm btn-outline-danger" data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#delete-course-modal">
+              ❌ Delete
+            </a>
+          </td>
+        </tr>
+        {{else}}
+        <tr>
+          <td colspan="6" class="text-center">
+            You haven't posted any courses yet.
+            <a href="/courses/create">Create a course</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
     </table>
+  </div>
+
 </form>
 
-{{!-- Confirm delete course --}}
+<!-- Confirm delete course modal -->
 <div id="delete-course-modal" class="modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Xóa khóa học?</h5>
+        <h5 class="modal-title text-danger">Delete course?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Bạn có chắc chắn muốn xóa khóa học này?</p>
+        <p>Are you sure you want to delete this course?</p>
       </div>
       <div class="modal-footer">
-        <button id="btn-delete-course" type="button" class="btn btn-danger">Xóa bỏ</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button id="btn-delete-course" type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
