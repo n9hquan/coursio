@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "coursio",
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/n9hquan/nodejs_blog.git"
+    "url": "git+https://github.com/n9hquan/coursio.git"
   },
   "keywords": [
     "nodejs",
@@ -19,9 +19,9 @@
   "author": "n9hquan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/n9hquan/nodejs_blog/issues"
+    "url": "https://github.com/n9hquan/coursio/issues"
   },
-  "homepage": "https://github.com/n9hquan/nodejs_blog#readme",
+  "homepage": "https://github.com/n9hquan/coursio#readme",
   "description": "",
   "lint-staged": {
     "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
