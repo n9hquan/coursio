@@ -21,7 +21,7 @@ coursio/
 │ │ ├── css/ # Compiled CSS
 │ │ │ ├── app.css
 │ │ │ └── app.css.map
-│ │ └── vendor/ # Vendor assets (optional — empty here)
+│ │ └── vendor/ 
 │ ├── resources/
 │ │ ├── scss/ # SCSS stylesheets
 │ │ │ ├── _variables.scss
