@@ -4,7 +4,6 @@ Each course includes a title, description, and a Youtube video link that can be 
 ## Folder Structure
 ```bash
 coursio/
-├── node_modules/ # Node.js dependencies
 ├── src/
 │ ├── app/
 │ │ ├── controllers/ # Application controllers
