@@ -2,11 +2,18 @@
 Coursio is a web application designed to be a simple course management tool for you. 
 It provides intuitive interfaces and robust features to create, edit, and delete courses, 
 ensuring seamless management of educational content.
+## Table of Contents
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Commands](#commands)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
 ## Features
 - Manage courses: Create, edit, and delete courses easily.
 - User-friendly UI: Clean interface for smooth interaction.
 - Data storage: Store and manage course data with MongoDB.
-## Folder Structure
+## Project Structure
 ```bash
 coursio/
 ├── src/
