@@ -58,6 +58,9 @@ app.engine(
                 return `<a href="?_sort&column=${field}&type=${type}">
                     <span class="${icon}"></span>
                   </a>`;
+            },
+            eq: function (a, b) {
+                return a === b;
             }
         }
     }),
