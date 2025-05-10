@@ -96,9 +96,9 @@ npm run watch
 ```
 ## Usage
 Here are some basic routes to get started with:
-- Home page: http://localhost:3000
-- Create a new course: http://localhost:3000/courses/create
-- See stored courses: http://localhost:3000/me/stored/courses
+- Home page: `http://localhost:3000`
+- Create a new course: `http://localhost:3000/courses/create`
+- See stored courses: `http://localhost:3000/me/stored/courses`
 ## Screenshots
 ![Home page](./src/public/image/home-page.png)
 ![Create course](./src/public/image/create-course.png)
