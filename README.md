@@ -1,5 +1,5 @@
 # Coursio
-Coursio is a web application designed to simplify course management for educators and administrators. 
+Coursio is a web application designed to simplify course management tool for you. 
 It provides intuitive interfaces and robust features to create, edit, and delete courses, 
 ensuring seamless management of educational content.
 ## Features
