@@ -66,6 +66,7 @@ git clone https://github.com/n9hquan/coursio.git
 cd coursio
 ```
 2. Install dependencies
+
 List of dependencies: 
 - express
 - express-handlebars
@@ -74,6 +75,7 @@ List of dependencies:
 - mongoose-delete
 - mongoose-sequence
 - mongoose-slug-generator
+
 For dev dependencies:
 - husky
 - lint-staged
@@ -81,7 +83,8 @@ For dev dependencies:
 - nodemon
 - prettier
 - sass
-3. Download MongoDB Compass and create a connection to the database that includes courses. 
+3. Download MongoDB Compass and create a connection to your MongoDB server.
+Inside the connection, create a database named coursio, and within it, a collection named courses.
 ## Commands
 To start the server, run:
 ```bash
